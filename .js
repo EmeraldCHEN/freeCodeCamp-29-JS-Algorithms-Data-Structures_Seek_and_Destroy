@@ -30,13 +30,15 @@ function destroyer(arr) {
     newArr.push(arguments[i]);
   }      
   let updateArr =[];
-  for(let j = 0; j <  arguments[0].length; j++){
+  for(let j = 0; j <  arguments[0].length; j++){ // arguments[0].length === arr.length in this program
     if(newArr.includes(arguments[0][j]) === false ){
       updateArr.push(arguments[0][j]);     
     }
   }
   return updateArr;
 }
+destroyer2([0, 1, 2, 3, 1, 2, 3], 2, 3); // return [0, 1, 1]
+
 destroyer2([1, 2, 3, 1, 2, 3], 2, 3); // return [1, 1]
 
 destroyer2([1, 2, 3, 5, 1, 2, 3], 2, 3); // return [1, 5, 1]
