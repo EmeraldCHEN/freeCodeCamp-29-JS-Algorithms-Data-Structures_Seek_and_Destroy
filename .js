@@ -1,4 +1,4 @@
-/**************   Solution #1             ********************************************************************************************/
+/**************   Solution #1     ***************************************************************************************/
 
 function destroyer1(arr) {
 
@@ -38,16 +38,22 @@ function destroyer(arr) {
   return updateArr;
 }
 destroyer2([0, 1, 2, 3, 1, 2, 3], 2, 3); // return [0, 1, 1]
-
-destroyer2([1, 2, 3, 1, 2, 3], 2, 3); // return [1, 1]
+destroyer2(   [1, 2, 3, 1, 2, 3], 2, 3); // return [1, 1]
 
 destroyer2([1, 2, 3, 5, 1, 2, 3], 2, 3); // return [1, 5, 1]
-
 destroyer2([3, 5, 1, 2, 2], 2, 3, 5); // return [1]
-
 destroyer2([2, 3, 2, 3], 2, 3); // return []
 
 
+
+/**************   Solution #3     ***************************************************************************************/
+
+function destroyer(arr) {
+   let args = Array.from(arguments).slice(1); // Set args equal to a new Array object from() the arguments passed into the function
+                                              // Then use the slice() method on args starting from the second index 
+   return arr.filter(item => !args.includes(item));  //  Use includes() in the callback function to check if val is not in args
+                                                     //  Return true to keep the value in the original array or false to remove it
+}
 
 
 
