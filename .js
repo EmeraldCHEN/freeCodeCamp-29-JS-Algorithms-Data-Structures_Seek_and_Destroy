@@ -46,7 +46,7 @@ destroyer2([2, 3, 2, 3], 2, 3); // return []
 
 
 
-/**************   Solution #3     ***************************************************************************************/
+/**************   Solution #3     **********************************************************************************/
 
 function destroyer(arr) {
    let args = Array.from(arguments).slice(1); // Set args equal to a new Array object from() the arguments passed into the function
@@ -54,6 +54,17 @@ function destroyer(arr) {
    return arr.filter(item => !args.includes(item));  //  Use includes() in the callback function to check if val is not in args
                                                      //  Return true to keep the value in the original array or false to remove it
 }
+
+
+
+/**************   Solution #4     **********************************************************************************/
+
+
+function destroyer(arr,...args) { // Using spread operator to retrieve the arguments
+   return arr.filter(value => !args.includes(value));
+}
+
+
 
 
 
